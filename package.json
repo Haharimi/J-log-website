@@ -2,7 +2,7 @@
   "name": "j-log",
   "version": "1.0.0",
   "description": "Youtube clone coding",
-  "main": "index.js",
+  "main": "init.js",
   "scripts": {
     "start": "nodemon --exec babel-node init.js"
   },
