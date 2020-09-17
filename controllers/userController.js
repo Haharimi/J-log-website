@@ -26,7 +26,11 @@ export const postLogin = (req, res) => {
   res.redirect(routes.home);
 };
 
-export const logout = (req, res) => res.send("Logout");
+export const logout = (req, res) => {
+  // To do : 로그아웃 처리하기
+  res.redirect(routes.home);
+};
+
 export const users = (req, res) => res.send("Users");
 export const userDetail = (req, res) => res.send("User Detail");
 export const editProfile = (req, res) =>
