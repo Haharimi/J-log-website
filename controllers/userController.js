@@ -18,7 +18,14 @@ export const postJoin = (req, res) => {
   }
 };
 
-export const login = (req, res) => res.render("login", { pageTile: "로그인" });
+export const getLogin = (req, res) => {
+  res.render("login", { pageTitle: "로그인" });
+};
+
+export const postLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+
 export const logout = (req, res) => res.send("Logout");
 export const users = (req, res) => res.send("Users");
 export const userDetail = (req, res) => res.send("User Detail");
