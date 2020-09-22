@@ -35,9 +35,18 @@ export const postUpload = async (req, res) => {
   res.redirect(routes.videoDetail(newVideo.id));
 };
 
-export const videoDetail = (req, res) => {
-  res.render("videoDetail", { pageTitle: "Video Detail" });
-  // pageTitle을 현재 비디오의 제목으로 변경하길원함!
+export const videoDetail = async (req, res) => {
+  const {
+    // URL에서 정보를 가져오는 방법 : req.params
+    params: { id },
+  } = req;
+  try {
+    const video = await Video.findById(id);
+    res.render("videoDetail", { pageTitle: "Video Detail", video });
+    // pageTitle을 현재 비디오의 제목으로 변경하길원함!
+  } catch (error) {
+    res.redirect(routes.home);
+  }
 };
 
 export const editVideo = (req, res) => res.send("Edit Video");
