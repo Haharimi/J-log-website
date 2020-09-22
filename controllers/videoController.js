@@ -43,11 +43,36 @@ export const videoDetail = async (req, res) => {
   try {
     const video = await Video.findById(id);
     res.render("videoDetail", { pageTitle: "Video Detail", video });
-    // pageTitle을 현재 비디오의 제목으로 변경하길원함!
+    // pageTitle을 현재 비디오의 제목으로 변경하길원함! --> getEditVideo에서 pageTitle을 video.title로 가져오는 방식 응용
   } catch (error) {
     res.redirect(routes.home);
   }
 };
 
-export const editVideo = (req, res) => res.send("Edit Video");
+export const getEditVideo = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    // id값이 존재한다면
+    const video = await Video.findById(id);
+    res.render("editVideo", { pageTitle: `${video.title} 수정`, video });
+  } catch (error) {
+    // id값이 존재하지 않는다면,
+    res.redirect(routes.home);
+  }
+};
+export const postEditVideo = async (req, res) => {
+  const {
+    params: { id },
+    body: { title, description },
+  } = req;
+  try {
+    await Video.findOneAndUpdate({ _id: id }, { title, description });
+    res.redirect(routes.videoDetail(id));
+  } catch (error) {
+    res.redirect(routes.home);
+  }
+};
+
 export const deleteVideo = (req, res) => res.send("Delete Video");

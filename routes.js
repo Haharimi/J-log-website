@@ -47,7 +47,14 @@ const routes = {
       return VIDEO_DETAIL;
     }
   },
-  editVideo: EDIT_VIDEO,
+  editVideo: (id) => {
+    if (id) {
+      // id가 존재한다면 아래의 URL로 이동,
+      return `/videos/${id}/edit`;
+    } else {
+      return EDIT_VIDEO;
+    }
+  },
   deleteVideo: DELETE_VIDEO,
 };
 
