@@ -1,13 +1,13 @@
-import routes from "../routes";
-import Video from "../model/Video";
+import routes from '../routes';
+import Video from '../model/Video';
 
 export const home = async (req, res) => {
   try {
     const videos = await Video.find({}).sort({ _id: -1 });
-    res.render("home", { pageTitle: "Home", videos });
+    res.render('home', { pageTitle: 'Home', videos });
   } catch (error) {
     console.log(error);
-    res.render("home", { pageTitle: "Home", videos });
+    res.render('home', { pageTitle: 'Home', videos });
   }
 };
 
@@ -15,11 +15,11 @@ export const search = (req, res) => {
   const {
     query: { term: searchingBy },
   } = req;
-  res.render("search", { pageTitle: "Search", searchingBy });
+  res.render('search', { pageTitle: 'Search', searchingBy });
 };
 
 export const getUpload = (req, res) => {
-  res.render("upload", { pageTitle: "Upload" });
+  res.render('upload', { pageTitle: 'Upload' });
 };
 export const postUpload = async (req, res) => {
   const {
@@ -42,7 +42,7 @@ export const videoDetail = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id);
-    res.render("videoDetail", { pageTitle: "Video Detail", video });
+    res.render('videoDetail', { pageTitle: 'Video Detail', video });
     // pageTitle을 현재 비디오의 제목으로 변경하길원함! --> getEditVideo에서 pageTitle을 video.title로 가져오는 방식 응용
   } catch (error) {
     res.redirect(routes.home);
@@ -56,7 +56,7 @@ export const getEditVideo = async (req, res) => {
   try {
     // id값이 존재한다면
     const video = await Video.findById(id);
-    res.render("editVideo", { pageTitle: `${video.title} 수정`, video });
+    res.render('editVideo', { pageTitle: `${video.title} 수정`, video });
   } catch (error) {
     // id값이 존재하지 않는다면,
     res.redirect(routes.home);
