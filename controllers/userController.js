@@ -1,7 +1,7 @@
-import routes from "../routes";
+import routes from '../routes';
 
 export const getJoin = (req, res) => {
-  res.render("join", { pageTitle: "회원가입" });
+  res.render('join', { pageTitle: '회원가입' });
 };
 
 export const postJoin = (req, res) => {
@@ -11,7 +11,7 @@ export const postJoin = (req, res) => {
   if (password !== password2) {
     // 비밀번호가 일치하지 않을 때
     res.status(400);
-    res.render("join", { pageTitle: "회원가입" });
+    res.render('join', { pageTitle: '회원가입' });
   } else {
     // 비밀번호가 일치할 때
     res.redirect(routes.home);
@@ -19,7 +19,7 @@ export const postJoin = (req, res) => {
 };
 
 export const getLogin = (req, res) => {
-  res.render("login", { pageTitle: "로그인" });
+  res.render('login', { pageTitle: '로그인' });
 };
 
 export const postLogin = (req, res) => {
@@ -31,8 +31,11 @@ export const logout = (req, res) => {
   res.redirect(routes.home);
 };
 
-export const users = (req, res) => res.send("Users");
-export const userDetail = (req, res) => res.send("User Detail");
+export const users = (req, res) => res.send('Users');
+
+export const userDetail = (req, res) => res.send('User Detail');
+
 export const editProfile = (req, res) =>
-  res.render("editProfile", { pageTitle: "프로필변경" });
-export const changePassword = (req, res) => res.send("Change Password");
+  res.render('editProfile', { pageTitle: '프로필변경' });
+
+export const changePassword = (req, res) => res.send('Change Password');
