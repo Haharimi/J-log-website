@@ -6,6 +6,7 @@ header.header
         .header__column
             form(action=routes.search, method="get")
                 input(type="text", placeholder="검색어를 입력하세요.", name="term")
+                button(class="fas fa-search", type="submit")
         .header__column
             ul
                 if !user.isAuthenticated
