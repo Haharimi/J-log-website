@@ -8,7 +8,7 @@ export const localsMiddleware = (rep, res, next) => {
   res.locals.siteName = 'J-Log';
   res.locals.routes = routes;
   res.locals.user = {
-    isAuthenticated: false,
+    isAuthenticated: true,
     id: 1,
   };
   next();

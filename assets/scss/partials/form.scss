@@ -6,24 +6,24 @@
     form {
         width: 100%;
         max-width: 320px;
-        margin-bottom: 50px;
-        input {
-            display: block;
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 8px 10px;
-            border: 1px solid #e0e0e0;
-            border-radius: 3px;
-        &:focus {
-            border: 1px solid $green;
-        }
-        }
+        margin-bottom: 15px;
         input[type="submit"] {
             border: none;
-            padding: 10px 10px;
             background-color: $green;
             color: white;
+            font-weight: 500;
         }
+        input[type="file"] {
+            margin-top: 10px;
+            background-color: white;
+        }
+        textarea {
+            padding: 8px 10px 30px 10px;
+        }
+    }
+    a {
+        width: 100%;
+        max-width: 320px;
     }
 }
     

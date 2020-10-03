@@ -2,8 +2,8 @@ extends layouts/main
 
 block content 
     .form__container
-        form(action=`/videos${routes.upload}`, method="post", enctype="multipart/form-data")
-            label(for="file") Video File
+        form(action=`/videos${routes.upload}`, method="post", enctype="multipart/form-data", autocomplete="off")
+            label(for="file")  비디오 업로드
             input(type="file", id="file", name="videoFile", required=true, accept="video/*")
             input(type="text", placeholder="제목", name="title", required=true)
             textarea(name="description", placeholder="세부설명", required=true)
