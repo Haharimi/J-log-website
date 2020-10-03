@@ -1,0 +1,20 @@
+.social-login {
+    button {
+        width: 100%;
+        max-width: 155px;
+        border-radius: 3px;
+        border: none;
+        padding: 10px 0;
+        font-weight: 400;
+    &:nth-child(1) {
+        margin-right: 10px;
+        background-color: #383838;
+        color: white;
+    }
+    &:last-child {
+        background-color: #f7e600;
+        color: #1c1c1c;
+    }
+    }
+    
+}   
