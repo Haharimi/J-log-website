@@ -38,4 +38,5 @@ export const userDetail = (req, res) => res.send('User Detail');
 export const editProfile = (req, res) =>
   res.render('editProfile', { pageTitle: '프로필변경' });
 
-export const changePassword = (req, res) => res.send('Change Password');
+export const changePassword = (req, res) =>
+  res.render('changePassword', { pageTitle: '비밀번호 변경' });
