@@ -153,9 +153,22 @@ body {
 
 main {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   min-height: 75vh; }
+
+input {
+  max-width: 320px; }
+
+button {
+  border: none;
+  padding: 6px 0;
+  font-weight: 500;
+  background-color: #004d40;
+  color: white;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px; }
 
 .header {
   background-color: #D6D2C4;
@@ -246,11 +259,12 @@ main {
           color: rgba(0, 0, 0, 0.7); }
       .header .header__wrapper .header__column form button {
         position: absolute;
-        top: 6px;
-        right: -70px;
+        top: 0;
+        right: -66px;
         border: none;
         background: none;
-        font-size: 20px; }
+        font-size: 18px;
+        color: #424242; }
 
 .footer {
   width: 100%;
@@ -336,7 +350,6 @@ main {
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
-  border: none;
   padding: 10px 0;
   font-weight: 400; }
   .social-login button:nth-child(1) {
@@ -346,3 +359,52 @@ main {
   .social-login button:last-child {
     background-color: #f7e600;
     color: #1c1c1c; }
+
+.video-detail__container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .video-detail__container .video__info {
+    width: 100%;
+    max-width: 850px;
+    margin-top: 14px; }
+    .video-detail__container .video__info button {
+      width: 90px;
+      margin-bottom: 15px; }
+    .video-detail__container .video__info .video__title,
+    .video-detail__container .video__info .video__views,
+    .video-detail__container .video__info .video__description {
+      display: block;
+      margin-bottom: 15px; }
+    .video-detail__container .video__info .video__title {
+      font-size: 24px;
+      font-weight: 600; }
+    .video-detail__container .video__info .video__views {
+      font-size: 14px;
+      font-weight: 400;
+      color: #616161;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 15px; }
+    .video-detail__container .video__info .video__description {
+      font-size: 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 15px; }
+  .video-detail__container .video__comments {
+    max-width: 850px;
+    width: 100%; }
+    .video-detail__container .video__comments .video__comment-number {
+      font-size: 18px; }
