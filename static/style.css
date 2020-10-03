@@ -375,6 +375,20 @@ button.delete {
     background-color: #f7e600;
     color: #1c1c1c; }
 
+.videoBlock video {
+  margin-bottom: 10px;
+  max-width: 100%; }
+
+.videoBlock .videoBlock__title {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px; }
+
+.home-videos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-gap: 30px; }
+
 .video-detail__container {
   display: -webkit-box;
   display: -webkit-flex;
