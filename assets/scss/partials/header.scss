@@ -1,6 +1,8 @@
 .header {
-    background-color: #ffffff;
+    // header 영역 고정 시키기 
+    background-color: #D6D2C4;
     margin-bottom: 30px;
+    
     .header__wrapper {
         display: flex;
         flex-direction: row;
@@ -25,7 +27,7 @@
                     margin-right: 30px;
                   }
                   a {
-                      color: $black;
+                      color: #004d40;
                       &:hover {
                           color: #919191;
                           transition: all  0.3
@@ -42,7 +44,7 @@
                     width: 450px;
                     padding: 7px 10px;
                     border-radius: 5px;
-                    border: 1px solid #424242;
+                    // border: 1px solid #424242;
                     font-size: 14px;
                     color: $black;
                     font-weight: 300;
