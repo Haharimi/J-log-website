@@ -4,19 +4,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #919191;
-    margin: 25px 0;
-    padding: 10px 0;
+    // background-color: #919191;
+    border-top: 1px solid #afafaf;
+    margin-top: 30px;
 
 }
     .footer__icon {
-        color: #ebebeb;
+        color: #afafaf;
         font-size: 30px;
         margin-bottom: 5px;
+        padding-top: 10px;;
     }
     .footer__text {
         font-weight: 300;
-        color: #ebebeb;
+        color: #afafaf;
         text-transform: uppercase;
+        margin-bottom: 10px;
 
     }

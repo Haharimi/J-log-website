@@ -308,19 +308,20 @@ button.delete {
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #919191;
-  margin: 25px 0;
-  padding: 10px 0; }
+  border-top: 1px solid #afafaf;
+  margin-top: 30px; }
 
 .footer__icon {
-  color: #ebebeb;
+  color: #afafaf;
   font-size: 30px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  padding-top: 10px; }
 
 .footer__text {
   font-weight: 300;
-  color: #ebebeb;
-  text-transform: uppercase; }
+  color: #afafaf;
+  text-transform: uppercase;
+  margin-bottom: 10px; }
 
 .form__container {
   width: 100%;
