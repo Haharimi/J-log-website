@@ -1,18 +1,19 @@
-import express from "express";
-import routes from "../routes";
-import { home, search } from "../controllers/videoController";
+import express from 'express';
+import routes from '../routes';
+import { home, search } from '../controllers/videoController';
 import {
   getJoin,
   postJoin,
   logout,
   getLogin,
   postLogin,
-} from "../controllers/userController";
+} from '../controllers/userController';
 
 const globalRouter = express.Router();
 
 globalRouter.get(routes.join, getJoin);
-globalRouter.post(routes.join, postJoin);
+globalRouter.post(routes.join, postJoin, postLogin);
+// postJoin을 미들웨어로 변경하여, PostJoin에서 받은 passport 정보를 postLogin으로 전달하여 로그인상태로 처리
 
 globalRouter.get(routes.login, getLogin);
 globalRouter.post(routes.login, postLogin);

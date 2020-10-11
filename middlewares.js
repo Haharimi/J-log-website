@@ -1,17 +1,17 @@
-import multer from 'multer';
-import routes from './routes';
-import { FALSE } from 'node-sass';
+import multer from "multer";
+import routes from "./routes";
 
-const multerVideo = multer({ dest: 'uploads/videos/' });
+const multerVideo = multer({ dest: "uploads/videos/" });
 
-export const localsMiddleware = (rep, res, next) => {
-  res.locals.siteName = 'J-Log';
+export const localsMiddleware = (req, res, next) => {
+  res.locals.siteName = "J-Log";
   res.locals.routes = routes;
-  res.locals.user = {
-    isAuthenticated: true,
-    id: 1,
-  };
+  res.locals.user = req.user || {};
+  // res.locals.user = {
+  //   isAuthenticated: false,
+  //   id: 1,
+  // };
   next();
 };
 
-export const uploadVideo = multerVideo.single('videoFile');
+export const uploadVideo = multerVideo.single("videoFile");
