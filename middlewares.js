@@ -7,10 +7,6 @@ export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "J-Log";
   res.locals.routes = routes;
   res.locals.user = req.user || {};
-  // res.locals.user = {
-  //   isAuthenticated: false,
-  //   id: 1,
-  // };
   next();
 };
 

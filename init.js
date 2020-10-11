@@ -1,6 +1,7 @@
-import app from "./app";
-import "./db";
 import dotenv from "dotenv";
+
+import "./db";
+import app from "./app";
 
 dotenv.config();
 
