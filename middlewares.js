@@ -21,4 +21,14 @@ export const onlyPublic = (req, res, next) => {
   }
 };
 
+export const onlyPrivate = (req, res, next) => {
+  if (req.user) {
+    // req.user가 존재한다면, 즉 로그인된 상태라면 다음으로 진행
+    next();
+  } else {
+    // req.user가 존재하지않는다면, 즉 로그아웃된 상태라면 홈으로
+    res.redirect(routes.home);
+  }
+};
+
 export const uploadVideo = multerVideo.single("videoFile");
