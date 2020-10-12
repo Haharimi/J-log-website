@@ -37,11 +37,6 @@ export const postLogin = passport.authenticate("local", {
   successRedirect: routes.home,
 });
 
-export const logout = (req, res) => {
-  // To do : 로그아웃 처리하기
-  res.redirect(routes.home);
-};
-
 export const userDetail = (req, res) => res.send("User Detail");
 
 export const editProfile = (req, res) =>
@@ -49,3 +44,19 @@ export const editProfile = (req, res) =>
 
 export const changePassword = (req, res) =>
   res.render("changePassword", { pageTitle: "비밀번호 변경" });
+
+// Github
+export const githubLogin = passport.authenticate("github");
+
+export const githubLoginCallback = (accessToken, refreshToken, profile, cb) => {
+  console.log(accessToken, refreshToken, profile, cb);
+};
+
+export const postGithubLogin = (req, res) => {
+  res.send(routes.home);
+};
+
+export const logout = (req, res) => {
+  req.logout();
+  res.redirect(routes.home);
+};

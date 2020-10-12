@@ -20,6 +20,11 @@ const VIDEO_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
 
+// Github
+
+const GITHUB = "/auth/github";
+const GITHUB_CALLBACK = "/auth/github/callback";
+
 const routes = {
   home: HOME,
   join: JOIN,
@@ -27,7 +32,7 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
-  userDetail: (id) => {
+  userDetail: id => {
     if (id) {
       // id값이 존재한다면
       return `/users/${id}`;
@@ -40,14 +45,14 @@ const routes = {
   changePassword: CHANGE_PASSWORD,
   videos: VIDEOS,
   upload: UPLOAD,
-  videoDetail: (id) => {
+  videoDetail: id => {
     if (id) {
       return `/videos/${id}`;
     } else {
       return VIDEO_DETAIL;
     }
   },
-  editVideo: (id) => {
+  editVideo: id => {
     if (id) {
       // id가 존재한다면 아래의 URL로 이동,
       return `/videos/${id}/edit`;
@@ -55,13 +60,15 @@ const routes = {
       return EDIT_VIDEO;
     }
   },
-  deleteVideo: (id) => {
+  deleteVideo: id => {
     if (id) {
       return `/videos/${id}/delete`;
     } else {
       return DELETE_VIDEO;
     }
   },
+  github: GITHUB,
+  githubCallback: GITHUB_CALLBACK,
 };
 
 export default routes;
