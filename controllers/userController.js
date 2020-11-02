@@ -37,7 +37,21 @@ export const postLogin = passport.authenticate("local", {
   successRedirect: routes.home,
 });
 
-export const userDetail = (req, res) => res.send("User Detail");
+export const userDetail = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const user = await User.findById(id);
+    res.render("userDetail", { pageTitle: "프로필 보기", user });
+  } catch (error) {
+    res.redirect(routes.home);
+  }
+};
+
+export const getMe = (req, res) => {
+  res.render("userDetail", { pageTitle: "프로필보기", user: req.user });
+};
 
 export const editProfile = (req, res) =>
   res.render("editProfile", { pageTitle: "프로필변경" });
