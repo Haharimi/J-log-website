@@ -48,12 +48,34 @@ export const changePassword = (req, res) =>
 // Github
 export const githubLogin = passport.authenticate("github");
 
-export const githubLoginCallback = (accessToken, refreshToken, profile, cb) => {
-  console.log(accessToken, refreshToken, profile, cb);
+export const githubLoginCallback = async (_, __, profile, cb) => {
+  const {
+    _json: { id, avatar_url, name, email },
+  } = profile;
+  try {
+    const user = await User.findOne({ email });
+    if (user) {
+      // User에 githib에 등록된 이메일과 동일한 user가 있을 경우, 정보를 업데이트
+      user.githubId = id;
+      user.save();
+      return cb(null, user);
+    } else {
+      // User에 일치하는 사용자가 없을 경우 새롭게 저장
+      const newUser = await User.create({
+        email,
+        name,
+        githubId: id,
+        avatarUrl: avatar_url,
+      });
+      return cb(null, newUser);
+    }
+  } catch (error) {
+    return cb(error);
+  }
 };
 
 export const postGithubLogin = (req, res) => {
-  res.send(routes.home);
+  res.redirect(routes.home);
 };
 
 export const logout = (req, res) => {
